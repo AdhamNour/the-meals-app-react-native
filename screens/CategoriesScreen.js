@@ -8,24 +8,23 @@ import {
 } from "react-native";
 
 import { CATEGORIES } from "../data/dummydata";
+import CategoryGridItemTile from "../components/CategoryGridItemTile";
 
 import Colors from "../Constants/Colors";
 
 const CategoriesScreen = (props) => {
   const renderGridItem = (ItemData) => (
-    <TouchableOpacity
-      style={{ ...styles.gridItem, backgroundColor: ItemData.item.color }}
+    <CategoryGridItemTile
       onPress={() => {
         props.navigation.navigate({
           routeName: "CategoryMeals",
           params: { categoryId: ItemData.item.id },
         });
       }}
-    >
-      <View>
-        <Text>{ItemData.item.title}</Text>
-      </View>
-    </TouchableOpacity>
+      
+      item={ItemData.item}
+
+      />
   );
   return (
     <FlatList data={CATEGORIES} numColumns={2} renderItem={renderGridItem} />
@@ -34,7 +33,6 @@ const CategoriesScreen = (props) => {
 
 CategoriesScreen.navigationOptions = {
   title: "Meals Categories",
-  
 };
 
 const styles = StyleSheet.create({
