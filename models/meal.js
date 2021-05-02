@@ -29,3 +29,5 @@ class Meal {
     this.isLactusFree = isLactusFree;
   }
 }
+
+export default Meal
