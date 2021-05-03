@@ -6,7 +6,6 @@ import HeaderButton from "../components/HeaderButton";
 
 const MealDetailsScreen = (props) => {
   const mealId = props.navigation.getParam("mealId");
-  console.log(mealId);
   return (
     <View style={styles.screen}>
       <Text>The MealDetailsScreen</Text>
