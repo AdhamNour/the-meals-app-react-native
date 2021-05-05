@@ -9,6 +9,10 @@ const FavoritesScreen = (props) => {
     </View> );
 }
 
+FavoritesScreen.navigationOptions ={
+    title: 'Your Favorites'
+}
+
 const styles = StyleSheet.create({
     screen: {
         flex:1,
