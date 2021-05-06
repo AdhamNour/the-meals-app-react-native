@@ -14,7 +14,7 @@ const FiltersScreen = (props) => {
 FiltersScreen.navigationOptions = (navData) => {
   return {
     title: "Filter Meals",
-    headerLeft: (
+    headerLeft:()=> (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
           title="Menu"

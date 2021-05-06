@@ -17,7 +17,7 @@ const FavoritesScreen = (props) => {
 FavoritesScreen.navigationOptions = (navData) => {
   return {
     title: "Your Favorites",
-    headerLeft: (
+    headerLeft:()=> (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
           title="Menu"
