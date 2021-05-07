@@ -81,11 +81,23 @@ const MealsFavTabNavigator =
         },
       });
 
-const FiltersNavigator = createStackNavigator({ Filters: FiltersScreen });
+const FiltersNavigator = createStackNavigator(
+  { Filters: FiltersScreen },
+  {
+    defaultNavigationOptions: DefaultNavOptions,
+    navigationOptions:{
+      drawerLabel:"Filters!!!"
+    }
+  }
+);
 
 const MainNavigator = createDrawerNavigator({
-  MealsFavs: MealsFavTabNavigator,
+  MealsFavs: {screen: MealsFavTabNavigator,navigationOptions:{
+    drawerLabel:"Favorite Meals"
+  }},
   Filters: FiltersNavigator,
+},{
+  contentOptions:{activeTintColor:Colors.accentColor}
 });
 
 export default createAppContainer(MainNavigator);
