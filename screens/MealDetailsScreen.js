@@ -15,6 +15,7 @@ const MealDetailsScreen = (props) => {
   const mealId = props.navigation.getParam("mealId");
   const availableMeals = useSelector(state => state.meals.meals)
   const selectedMeal = availableMeals.find((meal) => meal.id === mealId);
+  
   return (
     <ScrollView>
       <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
@@ -44,10 +45,10 @@ const MealDetailsScreen = (props) => {
 };
 
 MealDetailsScreen.navigationOptions = (navigationData) => {
-  const mealId = navigationData.navigation.getParam("mealId");
-  const mealx = MEALS.find((meal) => meal.id === mealId);
+  const mealTitle = navigationData.navigation.getParam("mealTitle");
+  
   return {
-    title: mealx.title,
+    title: mealTitle,
     headerRight: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
